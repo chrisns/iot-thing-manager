@@ -1,11 +1,9 @@
-'use strict';
 const AWS = require('aws-sdk')
 
 const iot = new AWS.Iot()
 
 module.exports.create = params =>
   iot.createThing(params).promise()
-
 
 module.exports.upsert = params => {
   var response
@@ -20,7 +18,6 @@ module.exports.upsert = params => {
 
 module.exports.update = params =>
   iot.updateThing(params).promise()
-
 
 module.exports.delete = params =>
   iot.deleteThing(params).promise()
