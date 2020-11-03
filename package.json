@@ -1,0 +1,23 @@
+{
+  "name": "iot-thing-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisns/iot-thing-manager.git"
+  },
+  "author": "Chris Nesbitt-Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisns/iot-thing-manager/issues"
+  },
+  "homepage": "https://github.com/chrisns/iot-thing-manager#readme",
+  "devDependencies": {
+    "serverless": "^2.10.0"
+  },
+  "dependencies": {}
+}
