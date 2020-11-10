@@ -5,13 +5,13 @@ const iot = new AWS.Iot()
 module.exports.create = params =>
   iot.createThing(params).promise()
 
-module.exports.upsert = params =>
-  iot.updateThing(params).promise()
-    .catch(() => {
-      console.log(`couldn't update ${params.thingName} trying to create it`)
-      return iot.createThing(params).promise()
-    })
-
+module.exports.upsert = params => {
+  try {
+    iot.updateThing(params).promise()
+  } catch (error) {
+    iot.createThing(params).promise()
+  }
+}
 
 module.exports.update = params =>
   iot.updateThing(params).promise()
