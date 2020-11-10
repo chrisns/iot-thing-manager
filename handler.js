@@ -5,13 +5,13 @@ const iot = new AWS.Iot()
 module.exports.create = params =>
   iot.createThing(params).promise()
 
-module.exports.upsert = params => {
+module.exports.upsert = async params => {
   var response
   try {
-    response = iot.updateThing(params).promise()
+    response = await iot.updateThing(params).promise()
   } catch (error) {
     console.log(`couldn't update ${params.thingName} trying to create it`)
-    response = iot.createThing(params).promise()
+    response = await iot.createThing(params).promise()
   }
   return response
 }
